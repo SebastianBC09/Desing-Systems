@@ -25,6 +25,6 @@ gulp.task('style_min', function () {
   .pipe(gulp.dest('public/stylesheets'))
 })
 
-gulp.task('watch', '[style_min]' function () {
-  return gulp.watch('src/**/*.scss',['style_min'])
+gulp.task('watch','[style_min]', function () {
+  gulp.watch('src/**/*.scss',['style_min'])
 })
