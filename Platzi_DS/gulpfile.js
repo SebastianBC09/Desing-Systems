@@ -3,7 +3,6 @@ var sass = require('gulp-sass')
 var minifyCSS = require ('gulp-minify-css')
 var concat = require('gulp-concat')
 
-
 /* function is not longer working properly. Have to use arrow functions instead. */
 
 gulp.task('hello', done => {
@@ -25,6 +24,8 @@ gulp.task('style_min', function () {
   .pipe(gulp.dest('public/stylesheets'))
 })
 
-gulp.task('watch','[style_min]', function () {
-  gulp.watch('src/**/*.scss',['style_min'])
+/* New version of Gulp Watch doesnt work with the code of the class... */
+
+gulp.task('watch', () => {
+  gulp.watch('scss/**/*.scss', gulp.series('style_min'))
 })
